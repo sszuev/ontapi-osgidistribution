@@ -292,19 +292,6 @@
             <version>${version.slf4j}</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>ru.avicomp</groupId>
-            <artifactId>ontapi-osgi</artifactId>
-            <version>${version.ontapi-osgi}</version>
-            <type>test-jar</type>
-            <scope>test</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>*</groupId>
-                    <artifactId>*</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
 
         <dependency>
             <groupId>org.apache.felix</groupId>
@@ -315,7 +302,6 @@
     </dependencies>
 
     <build>
-
         <testResources>
             <testResource>
                 <directory>src/test/resources</directory>
@@ -402,7 +388,6 @@
                 </executions>
             </plugin>
 
-
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
@@ -476,8 +461,6 @@
                     </instructions>
                 </configuration>
             </plugin>
-
-
         </plugins>
     </build>
 </project>

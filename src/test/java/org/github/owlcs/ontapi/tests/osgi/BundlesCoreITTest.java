@@ -1,12 +1,10 @@
 package org.github.owlcs.ontapi.tests.osgi;
 
+import org.github.owlcs.ontapi.utils.Bundles;
+import org.github.owlcs.ontapi.utils.ReflectionUtils;
 import org.junit.Before;
 import org.junit.runners.Parameterized;
 import org.osgi.framework.BundleException;
-import ru.avicomp.ontapi.tests.osgi.ClassesITTest;
-import ru.avicomp.ontapi.tests.osgi.NamedBundleTestBase;
-import ru.avicomp.ontapi.utils.Bundles;
-import ru.avicomp.ontapi.utils.ReflectionUtils;
 
 import java.util.ArrayList;
 import java.util.List;
