@@ -1,5 +1,12 @@
 package org.github.owlcs.ontapi.tests.func;
 
+import com.github.owlcs.ontapi.*;
+import com.github.owlcs.ontapi.jena.OntModelFactory;
+import com.github.owlcs.ontapi.jena.model.OntGraphModel;
+import com.github.owlcs.ontapi.jena.model.OntStatement;
+import com.github.owlcs.ontapi.jena.utils.Graphs;
+import com.github.owlcs.ontapi.jena.vocabulary.OWL;
+import com.github.owlcs.ontapi.jena.vocabulary.RDF;
 import org.apache.jena.rdf.model.Resource;
 import org.junit.Assert;
 import org.junit.BeforeClass;
@@ -9,13 +16,6 @@ import org.semanticweb.owlapi.io.StreamDocumentTarget;
 import org.semanticweb.owlapi.model.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import ru.avicomp.ontapi.*;
-import ru.avicomp.ontapi.jena.OntModelFactory;
-import ru.avicomp.ontapi.jena.model.OntGraphModel;
-import ru.avicomp.ontapi.jena.model.OntStatement;
-import ru.avicomp.ontapi.jena.utils.Graphs;
-import ru.avicomp.ontapi.jena.vocabulary.OWL;
-import ru.avicomp.ontapi.jena.vocabulary.RDF;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -106,7 +106,7 @@ public class FunctionalTest {
 
     @Test
     public void testFactoriesTestScope() {
-        String loadFactory = "ru.avicomp.ontapi.OntologyFactoryImpl";
+        String loadFactory = "com.github.owlcs.ontapi.OntologyFactoryImpl";
         try {
             Class.forName(loadFactory);
         } catch (ClassNotFoundException e) {

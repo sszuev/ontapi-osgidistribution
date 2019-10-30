@@ -52,7 +52,7 @@ public class Bundles {
         } else {
             count++;
             URI path = location.get();
-            LOGGER.info("Install bundle {} fron path <{}>", name, path);
+            LOGGER.info("Install bundle {} from path <{}>", name, path);
             bundle = context.installBundle(path.toString());
             Assert.assertNotNull("Null bundle", bundle);
             Assert.assertEquals("Not installed", Bundle.INSTALLED, bundle.getState());
@@ -63,6 +63,7 @@ public class Bundles {
         }
         Assert.assertEquals("Not active", Bundle.ACTIVE, bundle.getState());
         Assert.assertEquals("Wrong bundles count", count, context.getBundles().length);
+        LOGGER.info("Bundle <{}> is started and active", name);
         return res;
     }
 }

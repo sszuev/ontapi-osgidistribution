@@ -1,5 +1,6 @@
 package org.github.owlcs.ontapi.tests.func;
 
+import com.github.owlcs.ontapi.OntManagers;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -8,7 +9,6 @@ import org.semanticweb.owlapi.formats.TurtleDocumentFormat;
 import org.semanticweb.owlapi.model.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import ru.avicomp.ontapi.OntManagers;
 
 import java.io.ByteArrayOutputStream;
 import java.nio.charset.StandardCharsets;

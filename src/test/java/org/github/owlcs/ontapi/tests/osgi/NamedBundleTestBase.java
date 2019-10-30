@@ -24,7 +24,7 @@ public class NamedBundleTestBase extends AbstractBundleTestBase {
 
     @Before
     public void setUp() throws BundleException {
-        this.context = Bundles.setUp(framework, "ru.avicomp.ontapi-bundle", NamedBundleTestBase::getLocalJarPath);
+        this.context = Bundles.setUp(framework, "com.github.owlcs.ontapi-distribution-bundle", NamedBundleTestBase::getLocalJarPath);
     }
 
     public static URI getLocalJarPath() {

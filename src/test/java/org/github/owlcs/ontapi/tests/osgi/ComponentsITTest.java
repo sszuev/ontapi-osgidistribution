@@ -27,15 +27,18 @@ public class ComponentsITTest extends NamedBundleTestBase {
     @Test
     public void testListComponents() {
         List<String> libs = getLibs();
+        libs.forEach(x -> LOGGER.debug("Found lib: {}", x));
         String s = String.join(",", libs);
         LOGGER.info("All : {}", s);
-        Assert.assertEquals(26, libs.size());
+        Assert.assertEquals(42, libs.size());
     }
 
     @Test
     public void testInstallComponents() throws BundleException {
         BundleContext context = getContext();
         Bundle main = getBundle();
+
+        Assert.assertNotNull(main);
         List<String> libs = getLibs();
         for (String lib : libs) {
             URL url = main.getResource(lib);
