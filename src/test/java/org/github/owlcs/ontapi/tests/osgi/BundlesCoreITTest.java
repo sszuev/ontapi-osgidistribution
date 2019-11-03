@@ -15,6 +15,7 @@ import org.osgi.framework.BundleException;
 import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -30,7 +31,7 @@ public class BundlesCoreITTest extends ClassesITTest {
 
     @Parameterized.Parameters(name = "{0}")
     public static List<Tester> getTesters() {
-        return Arrays.asList(
+        List<Tester> res = Arrays.asList(
                 Tester.of(OntologyManager.class)
                 , Tester.of(OntologyModel.class)
                 , Tester.of(OWLOntologyManager.class)
@@ -48,9 +49,14 @@ public class BundlesCoreITTest extends ClassesITTest {
                 , Tester.of(org.semanticweb.owlapi.functional.parser.OWLFunctionalSyntaxOWLParser.class, ReflectionUtils::newInstance)
                 , Tester.of(org.apache.jena.graph.NodeFactory.class, ReflectionUtils::newInstance)
                 , Tester.of(org.tukaani.xz.XZInputStream.class)
-                , Tester.of(org.semanticweb.owlapi.reasoner.impl.OWLObjectPropertyNode.class)
                 , Tester.of(org.eclipse.rdf4j.model.IRI.class)
                 , Tester.of(org.apache.jena.rdf.model.RDFNode.class));
+        if (System.getProperty("profile") != null) { // OWL-API-impl is included
+            LOGGER.info("The profile 'withDefaultImpl' is specified.");
+            res = new ArrayList<>(res);
+            res.add(Tester.of(org.semanticweb.owlapi.reasoner.impl.OWLObjectPropertyNode.class));
+        }
+        return res;
     }
 
     @Before

@@ -78,6 +78,41 @@
         </repository>
     </repositories>
 
+    <profiles>
+        <profile>
+            <id>withDefaultImpl</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <dependencies>
+                <dependency>
+                    <groupId>net.sourceforge.owlapi</groupId>
+                    <artifactId>owlapi-impl</artifactId>
+                    <version>${version.owlapi}</version>
+                    <exclusions>
+                        <exclusion>
+                            <groupId>*</groupId>
+                            <artifactId>*</artifactId>
+                        </exclusion>
+                    </exclusions>
+                </dependency>
+            </dependencies>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-failsafe-plugin</artifactId>
+                        <configuration>
+                            <systemPropertyVariables>
+                                <profile>withDefaultImpl</profile>
+                            </systemPropertyVariables>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
     <dependencies>
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -157,18 +192,6 @@
         <dependency>
             <groupId>net.sourceforge.owlapi</groupId>
             <artifactId>owlapi-api</artifactId>
-            <version>${version.owlapi}</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>*</groupId>
-                    <artifactId>*</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <!-- todo: owlapi-impl is needed only for reasoners part:-->
-        <dependency>
-            <groupId>net.sourceforge.owlapi</groupId>
-            <artifactId>owlapi-impl</artifactId>
             <version>${version.owlapi}</version>
             <exclusions>
                 <exclusion>
@@ -563,7 +586,18 @@
             <version>${version.slf4j}</version>
             <scope>test</scope>
         </dependency>
-
+        <dependency>
+            <groupId>net.sourceforge.owlapi</groupId>
+            <artifactId>owlapi-impl</artifactId>
+            <version>${version.owlapi}</version>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>*</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
         <dependency>
             <groupId>org.apache.felix</groupId>
             <artifactId>org.apache.felix.main</artifactId>

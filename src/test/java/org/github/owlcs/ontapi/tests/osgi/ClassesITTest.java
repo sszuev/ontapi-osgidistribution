@@ -20,7 +20,7 @@ import java.util.stream.Stream;
  */
 @SuppressWarnings("WeakerAccess")
 public abstract class ClassesITTest extends NamedBundleTestBase {
-    private static final Logger LOGGER = LoggerFactory.getLogger(ClassesITTest.class);
+    static final Logger LOGGER = LoggerFactory.getLogger(ClassesITTest.class);
 
     private final Tester tester;
 
