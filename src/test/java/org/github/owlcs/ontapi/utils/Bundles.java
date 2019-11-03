@@ -20,6 +20,7 @@ import java.util.function.Supplier;
  * <p>
  * Created by @szuev on 19.02.2018.
  */
+@SuppressWarnings("WeakerAccess")
 public class Bundles {
     private static final Logger LOGGER = LoggerFactory.getLogger(TestBundle.class);
 

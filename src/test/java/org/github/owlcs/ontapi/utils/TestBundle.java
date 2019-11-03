@@ -7,6 +7,7 @@ import org.osgi.framework.launch.Framework;
 /**
  * Created by @szuev on 19.02.2018.
  */
+@SuppressWarnings("WeakerAccess")
 public class TestBundle {
 
     private final Framework framework;

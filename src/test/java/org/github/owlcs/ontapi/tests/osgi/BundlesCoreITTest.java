@@ -51,7 +51,7 @@ public class BundlesCoreITTest extends ClassesITTest {
                 , Tester.of(org.tukaani.xz.XZInputStream.class)
                 , Tester.of(org.eclipse.rdf4j.model.IRI.class)
                 , Tester.of(org.apache.jena.rdf.model.RDFNode.class));
-        if (System.getProperty("profile") != null) { // OWL-API-impl is included
+        if ("withDefaultImpl".equals(System.getProperty("profile"))) { // OWL-API-impl is included
             LOGGER.info("The profile 'withDefaultImpl' is specified.");
             res = new ArrayList<>(res);
             res.add(Tester.of(org.semanticweb.owlapi.reasoner.impl.OWLObjectPropertyNode.class));
