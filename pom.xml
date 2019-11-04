@@ -42,7 +42,8 @@
         <!-- jena-arq, bin-rdf -->
         <version.libthrift>0.12.0</version.libthrift>
         <!-- used by jsonld, jena (jackson-core,jackson-databind) & owl-api (+jackson-annotations) -->
-        <version.jackson>2.9.9</version.jackson>
+        <version.jackson>2.9.10</version.jackson>
+        <version.jackson-databind>2.9.10.1</version.jackson-databind>
         <!-- guava depends only on several packs with annotations -->
         <version.google-guava>22.0</version.google-guava>
         <!-- javax.inject is used by owl-api, even by owlapi-api -->
@@ -56,7 +57,7 @@
         <!-- by jena-core, XSDbase64Binary -->
         <version.commons-codec>1.11</version.commons-codec>
         <!-- jena-base, io -->
-        <version.commons-compress>1.18</version.commons-compress>
+        <version.commons-compress>1.19</version.commons-compress>
         <!--httpclient-cache is not explicitly used by jena (just as utility in org.apache.jena.riot.web.HttpOp) -->
         <version.httpclient-cache>4.5.5</version.httpclient-cache>
         <!-- owlapi, javax.annotations -->
@@ -322,7 +323,7 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>${version.jackson}</version>
+            <version>${version.jackson-databind}</version>
             <exclusions>
                 <exclusion>
                     <groupId>*</groupId>
