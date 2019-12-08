@@ -2,8 +2,8 @@ package org.github.owlcs.ontapi.tests.osgi;
 
 import com.github.owlcs.ontapi.DataFactoryImpl;
 import com.github.owlcs.ontapi.OntManagers;
+import com.github.owlcs.ontapi.Ontology;
 import com.github.owlcs.ontapi.OntologyManager;
-import com.github.owlcs.ontapi.OntologyModel;
 import com.github.owlcs.ontapi.jena.OntModelFactory;
 import org.apache.jena.graph.Graph;
 import org.github.owlcs.ontapi.utils.Bundles;
@@ -25,15 +25,15 @@ import java.util.List;
 @RunWith(Parameterized.class)
 public class BundlesCoreITTest extends ClassesITTest {
 
-    public BundlesCoreITTest(Tester tester) {
+    public BundlesCoreITTest(Tester<?> tester) {
         super(tester);
     }
 
     @Parameterized.Parameters(name = "{0}")
-    public static List<Tester> getTesters() {
-        List<Tester> res = Arrays.asList(
+    public static List<Tester<?>> getTesters() {
+        List<Tester<?>> res = Arrays.asList(
                 Tester.of(OntologyManager.class)
-                , Tester.of(OntologyModel.class)
+                , Tester.of(Ontology.class)
                 , Tester.of(OWLOntologyManager.class)
                 , Tester.of(Graph.class)
                 , Tester.of(com.github.owlcs.ontapi.jena.model.OntCE.UnaryRestrictionCE.class)
@@ -65,5 +65,4 @@ public class BundlesCoreITTest extends ClassesITTest {
         //Bundles.setUp(framework, "com.github.owlcs.ontapi-bundle", () -> Jars.find("com.github.owlcs", "ontapi-osgi"));
         this.context = Bundles.setUp(framework, "com.github.owlcs.ontapi-distribution-bundle", NamedBundleTestBase::getLocalJarPath);
     }
-
 }

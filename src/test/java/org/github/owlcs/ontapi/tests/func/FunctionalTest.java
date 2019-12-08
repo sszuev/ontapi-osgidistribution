@@ -50,7 +50,7 @@ public class FunctionalTest {
 
         InputStream in = new ByteArrayInputStream(sw.toString().getBytes(StandardCharsets.UTF_8));
         OntologyManager m = OntManagers.createONT();
-        OntologyModel ont = m.loadOntologyFromOntologyDocument(in);
+        Ontology ont = m.loadOntologyFromOntologyDocument(in);
         Assert.assertEquals(uri, ont.getOntologyID()
                 .getOntologyIRI()
                 .map(String::valueOf).orElseThrow(AssertionError::new));

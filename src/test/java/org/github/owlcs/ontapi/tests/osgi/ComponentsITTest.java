@@ -57,5 +57,4 @@ public class ComponentsITTest extends NamedBundleTestBase {
             LOGGER.warn("ERROR: <{}>: '{}'", location, b.getMessage());
         }
     }
-
 }

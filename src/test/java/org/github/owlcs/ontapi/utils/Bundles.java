@@ -24,7 +24,7 @@ import java.util.function.Supplier;
 public class Bundles {
     private static final Logger LOGGER = LoggerFactory.getLogger(TestBundle.class);
 
-    public static Framework create(Map config) throws BundleException {
+    public static Framework create(Map<?, ?> config) throws BundleException {
         FrameworkFactory factory = new FrameworkFactory();
         Framework res = factory.newFramework(config);
         Assert.assertNotNull("Null framework", res);

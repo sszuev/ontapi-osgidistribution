@@ -51,6 +51,4 @@ public abstract class AbstractBundleTestBase {
         }
         return res;
     }
-
-
 }

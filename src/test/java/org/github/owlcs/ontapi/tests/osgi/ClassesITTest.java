@@ -22,9 +22,9 @@ import java.util.stream.Stream;
 public abstract class ClassesITTest extends NamedBundleTestBase {
     static final Logger LOGGER = LoggerFactory.getLogger(ClassesITTest.class);
 
-    private final Tester tester;
+    private final Tester<?> tester;
 
-    public ClassesITTest(Tester tester) {
+    public ClassesITTest(Tester<?> tester) {
         this.tester = tester;
     }
 
@@ -90,7 +90,7 @@ public abstract class ClassesITTest extends NamedBundleTestBase {
         }
 
         @SuppressWarnings("unchecked")
-        void test(Class other) {
+        void test(Class<?> other) {
             if (action == null) return;
             LOGGER.info("Test <{}>", other);
             action.accept((Class<C>) other);
@@ -100,9 +100,8 @@ public abstract class ClassesITTest extends NamedBundleTestBase {
             return new Tester<>(clazz, action);
         }
 
-        @SuppressWarnings("unchecked")
-        public static Tester of(Class clazz) {
-            return new Tester(clazz, null);
+        public static <X> Tester<X> of(Class<X> clazz) {
+            return new Tester<>(clazz, null);
         }
     }
 
