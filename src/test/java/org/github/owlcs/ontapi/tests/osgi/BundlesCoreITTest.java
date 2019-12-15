@@ -36,7 +36,7 @@ public class BundlesCoreITTest extends ClassesITTest {
                 , Tester.of(Ontology.class)
                 , Tester.of(OWLOntologyManager.class)
                 , Tester.of(Graph.class)
-                , Tester.of(com.github.owlcs.ontapi.jena.model.OntCE.UnaryRestrictionCE.class)
+                , Tester.of(com.github.owlcs.ontapi.jena.model.OntClass.UnaryRestrictionCE.class)
                 , Tester.of(com.github.owlcs.ontapi.transforms.SWRLTransform.class)
                 , Tester.of(com.github.owlcs.ontapi.internal.ONTObject.class)
                 , Tester.of(IRI.class, ClassesITTest::testIRI)

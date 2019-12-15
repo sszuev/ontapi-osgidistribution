@@ -2,7 +2,7 @@ package org.github.owlcs.ontapi.tests.func;
 
 import com.github.owlcs.ontapi.*;
 import com.github.owlcs.ontapi.jena.OntModelFactory;
-import com.github.owlcs.ontapi.jena.model.OntGraphModel;
+import com.github.owlcs.ontapi.jena.model.OntModel;
 import com.github.owlcs.ontapi.jena.model.OntStatement;
 import com.github.owlcs.ontapi.jena.utils.Graphs;
 import com.github.owlcs.ontapi.jena.vocabulary.OWL;
@@ -41,7 +41,7 @@ public class FunctionalTest {
     @Test
     public void testGeneralFunctionality() throws Exception {
         String uri = "http://test";
-        OntGraphModel g = OntModelFactory.createModel();
+        OntModel g = OntModelFactory.createModel();
         g.setID(uri);
         StringWriter sw = new StringWriter();
         g.write(sw, OntFormat.TURTLE.getID());
@@ -103,7 +103,6 @@ public class FunctionalTest {
         }
     }
 
-
     @Test
     public void testFactoriesTestScope() {
         String loadFactory = "com.github.owlcs.ontapi.OntologyFactoryImpl";
@@ -155,7 +154,8 @@ public class FunctionalTest {
             OWLStorer storer = factory.createStorer();
             OWLDocumentFormat format = lang.getFormatFactory().get();
             ByteArrayOutputStream out = new ByteArrayOutputStream();
-            logger.info("FORMAT: {{}-{}:'{}'}", factory.getClass().getSimpleName(), format.getClass().getSimpleName(), format.getKey());
+            logger.info("FORMAT: {{}-{}:'{}'}",
+                    factory.getClass().getSimpleName(), format.getClass().getSimpleName(), format.getKey());
             storer.storeOntology(o, new StreamDocumentTarget(out), format);
             logger.debug("{}", new String(out.toByteArray(), StandardCharsets.UTF_8));
         }
