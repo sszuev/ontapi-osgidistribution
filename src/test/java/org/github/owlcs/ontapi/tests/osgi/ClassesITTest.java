@@ -56,7 +56,7 @@ public abstract class ClassesITTest extends NamedBundleTestBase {
 
     public static void testOntManager(Class<OntManagers> c) {
         ReflectionUtils.newInstance(c);
-        Stream.of("createONT", "createConcurrentONT", "getDataFactory")
+        Stream.of("createManager", "createConcurrentManager", "getDataFactory")
                 .forEach(name -> ReflectionUtils.invokeStaticMethod(c, name));
     }
 

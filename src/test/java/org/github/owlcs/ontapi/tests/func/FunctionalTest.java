@@ -49,7 +49,7 @@ public class FunctionalTest {
         Assert.assertEquals(uri, Graphs.getURI(g.getGraph()));
 
         InputStream in = new ByteArrayInputStream(sw.toString().getBytes(StandardCharsets.UTF_8));
-        OntologyManager m = OntManagers.createONT();
+        OntologyManager m = OntManagers.createManager();
         Ontology ont = m.loadOntologyFromOntologyDocument(in);
         Assert.assertEquals(uri, ont.getOntologyID()
                 .getOntologyIRI()
@@ -129,7 +129,7 @@ public class FunctionalTest {
 
     @Test
     public void testOWLFormatsTestScope() throws Exception {
-        OWLOntologyManager m = OntManagers.createONT();
+        OWLOntologyManager m = OntManagers.createManager();
         OWLDataFactory df = m.getOWLDataFactory();
         OWLObjectProperty p = df.getOWLObjectProperty("http://ex.com#obj-prop");
         OWLNamedIndividual i1 = df.getOWLNamedIndividual("http://ex.com#indi-1");

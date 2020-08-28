@@ -68,10 +68,10 @@ public class SimpleOWLTest {
     }
 
     private enum TestFactory {
-        ONT(OntManagers::createONT),
-        ONT_CONCUR(OntManagers::createConcurrentONT),
-        OWL(OntManagers::createOWL),
-        OWL_CONCUR(OntManagers::createConcurrentOWL),
+        ONT(OntManagers::createManager),
+        ONT_CONCUR(OntManagers::createConcurrentManager),
+        OWL(OntManagers::createOWLAPIImplManager),
+        OWL_CONCUR(OntManagers::createConcurrentOWLAPIImplManager),
         ;
         private final Supplier<OWLOntologyManager> delegate;
 
