@@ -24,15 +24,15 @@ public class ReflectionUtils {
         }
     }
 
-    public static void invokeStaticMethod(Class<?> clazz,
-                                          String methodName) {
-        invokeStaticMethod(clazz, methodName, LinkedListMultimap.create());
+    public static Object invokeStaticMethod(Class<?> clazz,
+                                            String methodName) {
+        return invokeStaticMethod(clazz, methodName, LinkedListMultimap.create());
     }
 
-    public static void invokeStaticMethod(Class<?> clazz,
-                                          String methodName,
-                                          LinkedListMultimap<Class<?>, Object> params) {
-        invokeMethod(clazz, null, methodName, params);
+    public static Object invokeStaticMethod(Class<?> clazz,
+                                            String methodName,
+                                            LinkedListMultimap<Class<?>, Object> params) {
+        return invokeMethod(clazz, null, methodName, params);
     }
 
     /**
