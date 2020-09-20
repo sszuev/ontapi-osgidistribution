@@ -6,7 +6,7 @@
 
     <groupId>com.github.sszuev</groupId>
     <artifactId>ontapi-osgidistribution</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.1-SNAPSHOT</version>
 
     <packaging>bundle</packaging>
 
@@ -18,19 +18,19 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <version.ontapi>2.1.0-SNAPSHOT</version.ontapi>
-        <version.jena>3.12.0</version.jena>
-        <version.owlapi>5.1.11</version.owlapi>
-        <version.caffeine>2.8.0</version.caffeine>
-        <version.slf4j>1.7.28</version.slf4j>
+        <version.jena>3.16.0</version.jena>
+        <version.owlapi>5.1.14</version.owlapi>
+        <version.caffeine>2.8.5</version.caffeine>
+        <version.slf4j>1.7.30</version.slf4j>
 
         <!-- used by jena-arq -->
-        <ver.httpclient>4.5.5</ver.httpclient>
+        <ver.httpclient>4.5.10</ver.httpclient>
         <ver.httpcore>4.4.9</ver.httpcore>
         <!-- normally, these are the same as the above -->
         <version.httpcore-osgi>${ver.httpcore}</version.httpcore-osgi>
         <version.httpclient-osgi>${ver.httpclient}</version.httpclient-osgi>
         <!-- jena-arq, jena-base, utils -->
-        <version.commons-lang3>3.4</version.commons-lang3>
+        <version.commons-lang3>3.10</version.commons-lang3>
         <!-- jena-base, jena-core -->
         <version.commons-io>2.6</version.commons-io>
         <!-- jena-base, sparql resultsets -->
@@ -38,14 +38,14 @@
         <!-- jena-base (sparql), jena-base -->
         <version.dexx-collection>0.7</version.dexx-collection>
         <!-- used by jena and owlapi-rio  -->
-        <version.jsonld-java>0.12.3</version.jsonld-java>
+        <version.jsonld-java>0.13.1</version.jsonld-java>
         <!-- jena-arq, bin-rdf -->
-        <version.libthrift>0.12.0</version.libthrift>
+        <version.libthrift>0.13.0</version.libthrift>
         <!-- used by jsonld, jena (jackson-core,jackson-databind) & owl-api (+jackson-annotations) -->
-        <version.jackson>2.9.10</version.jackson>
-        <version.jackson-databind>2.9.10.4</version.jackson-databind>
+        <version.jackson>2.10.1</version.jackson>
+        <version.jackson-databind>2.10.1</version.jackson-databind>
         <!-- guava depends only on several packs with annotations -->
-        <version.google-guava>22.0</version.google-guava>
+        <version.google-guava>29.0-jre</version.google-guava>
         <!-- javax.inject is used by owl-api, even by owlapi-api -->
         <version.bundles-javax-inject>1_3</version.bundles-javax-inject>
         <!-- used by owlapi-api (e.g. org.semanticweb.owlapi.model.IRI) -->
@@ -55,11 +55,11 @@
         <!-- owlapi-api, org.semanticweb.owlapi.io.DocumentSources -->
         <version.tukaani-xz>1.8</version.tukaani-xz>
         <!-- by jena-core, XSDbase64Binary -->
-        <version.commons-codec>1.11</version.commons-codec>
+        <version.commons-codec>1.14</version.commons-codec>
         <!-- jena-base, io -->
-        <version.commons-compress>1.19</version.commons-compress>
+        <version.commons-compress>1.20</version.commons-compress>
         <!--httpclient-cache is not explicitly used by jena (just as utility in org.apache.jena.riot.web.HttpOp) -->
-        <version.httpclient-cache>4.5.5</version.httpclient-cache>
+        <version.httpclient-cache>${ver.httpclient}</version.httpclient-cache>
         <!-- owlapi, javax.annotations -->
         <version.findbug-jsr305>3.0.2</version.findbug-jsr305>
         <!-- owlapi-parsers -->
@@ -633,7 +633,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.22.2</version>
+                <version>3.0.0-M5</version>
                 <configuration>
                     <includes>
                         <include>**/*Test.java</include>
@@ -647,7 +647,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>
-                <version>2.22.2</version>
+                <version>3.0.0-M5</version>
                 <configuration>
                     <includes>
                         <include>**/*ITTest.java</include>
@@ -666,7 +666,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
-                <version>3.2.1</version>
+                <version>3.2.4</version>
                 <executions>
                     <execution>
                         <phase>package</phase>
@@ -696,7 +696,7 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
-                <version>4.1.0</version>
+                <version>5.1.1</version>
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
@@ -757,6 +757,10 @@
                             !org.osgi.service.cm.*,
                             !org.slf4j.impl.*,
                             !com.google.errorprone.*,
+                            !com.google.appengine.api,
+                            !com.google.apphosting.api,
+                            !com.google.appengine.api.utils,
+                            !com.google.common.util.concurrent.internal.*,
                             !com.google.inject.*,
                             !javax.servlet.*,
                             !javax.swing,
