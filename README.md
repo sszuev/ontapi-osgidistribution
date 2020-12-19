@@ -33,4 +33,4 @@ $ mvn clean install
 ## Version history and dependencies:
 
 * __1.0.0-SNAPSHOT__: ONT-API-2.0.0-SNAPSHOT (jena 3.12.0, owlapi 5.1.11)
-* __1.0.1-SNAPSHOT__: ONT-API-2.1.0-SNAPSHOT (jena 3.16.0, owlapi 5.1.14)
+* __1.0.1-SNAPSHOT__: ONT-API-2.1.1-SNAPSHOT (jena 3.16.0, owlapi 5.1.14)
