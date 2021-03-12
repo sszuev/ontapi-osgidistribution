@@ -40,7 +40,7 @@
         <!-- used by jena and owlapi-rio  -->
         <version.jsonld-java>0.13.1</version.jsonld-java>
         <!-- jena-arq, bin-rdf -->
-        <version.libthrift>0.13.0</version.libthrift>
+        <version.libthrift>0.14.0</version.libthrift>
         <!-- used by jsonld, jena (jackson-core,jackson-databind) & owl-api (+jackson-annotations) -->
         <version.jackson>2.10.1</version.jackson>
         <version.jackson-databind>2.10.1</version.jackson-databind>
