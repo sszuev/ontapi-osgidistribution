@@ -32,7 +32,7 @@
         <!-- jena-arq, jena-base, utils -->
         <version.commons-lang3>3.10</version.commons-lang3>
         <!-- jena-base, jena-core -->
-        <version.commons-io>2.6</version.commons-io>
+        <version.commons-io>2.7</version.commons-io>
         <!-- jena-base, sparql resultsets -->
         <version.commons-csv>1.5</version.commons-csv>
         <!-- jena-base (sparql), jena-base -->
