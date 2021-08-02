@@ -57,7 +57,7 @@
         <!-- by jena-core, XSDbase64Binary -->
         <version.commons-codec>1.14</version.commons-codec>
         <!-- jena-base, io -->
-        <version.commons-compress>1.20</version.commons-compress>
+        <version.commons-compress>1.21</version.commons-compress>
         <!--httpclient-cache is not explicitly used by jena (just as utility in org.apache.jena.riot.web.HttpOp) -->
         <version.httpclient-cache>${ver.httpclient}</version.httpclient-cache>
         <!-- owlapi, javax.annotations -->
