@@ -18,7 +18,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <version.ontapi>2.1.1-SNAPSHOT</version.ontapi>
-        <version.jena>3.16.0</version.jena>
+        <version.jena>4.2.0</version.jena>
         <version.owlapi>5.1.14</version.owlapi>
         <version.caffeine>2.8.5</version.caffeine>
         <version.slf4j>1.7.30</version.slf4j>
